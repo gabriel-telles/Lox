@@ -63,7 +63,7 @@ public class GenerateAST {
         writer.println("\tstatic class " + className + " extends " + baseName + " {");
 
         // Constructor
-        writer.println("\t\tpublic " + className + "(" + fieldList + ") {");
+        writer.println("\t\t" + className + "(" + fieldList + ") {");
         String[] fields = fieldList.split(", ");
         for (String field : fields) {
             String name = field.split(" ")[1];

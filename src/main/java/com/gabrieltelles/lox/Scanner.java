@@ -32,7 +32,7 @@ class Scanner {
         keywords.put("while", TokenType.WHILE);
     }
 
-    public Scanner(String source) {
+    Scanner(String source) {
         this.source = source;
     }
 

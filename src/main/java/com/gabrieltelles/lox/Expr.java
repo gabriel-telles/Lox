@@ -10,7 +10,7 @@ abstract class Expr {
 		R visitUnaryExpr(Unary expr);
 	}
 	static class Binary extends Expr {
-		public Binary(Expr left, Token operator, Expr right) {
+		Binary(Expr left, Token operator, Expr right) {
 			this.left = left;
 			this.operator = operator;
 			this.right = right;
@@ -27,7 +27,7 @@ abstract class Expr {
 	}
 
 	static class Grouping extends Expr {
-		public Grouping(Expr expression) {
+		Grouping(Expr expression) {
 			this.expression = expression;
 		}
 
@@ -40,7 +40,7 @@ abstract class Expr {
 	}
 
 	static class Literal extends Expr {
-		public Literal(Object value) {
+		Literal(Object value) {
 			this.value = value;
 		}
 
@@ -53,7 +53,7 @@ abstract class Expr {
 	}
 
 	static class Unary extends Expr {
-		public Unary(Token operator, Expr right) {
+		Unary(Token operator, Expr right) {
 			this.operator = operator;
 			this.right = right;
 		}
