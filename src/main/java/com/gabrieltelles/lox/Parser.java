@@ -166,6 +166,7 @@ class Parser {
         return new Stmt.Expression(expr);
     }
 
+    @SuppressWarnings("ThrowableNotThrown")
     private Stmt.Function function(String kind) {
         Token name = consume(TokenType.IDENTIFIER, "Expect " + kind + " name.");
         consume(TokenType.LEFT_PAREN, "Expect '(' after " + kind + " name.");
@@ -199,6 +200,7 @@ class Parser {
         return assignment();
     }
 
+    @SuppressWarnings("ThrowableNotThrown")
     private Expr assignment() {
         Expr expr = or();
 
@@ -314,6 +316,7 @@ class Parser {
         return expr;
     }
 
+    @SuppressWarnings("ThrowableNotThrown")
     private Expr finishCall(Expr callee) {
         List<Expr> arguments = new ArrayList<>();
         if (!check(TokenType.RIGHT_PAREN)) {
